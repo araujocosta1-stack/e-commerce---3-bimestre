@@ -5,9 +5,9 @@ import {Produto} from "./components/Produto.jsx";
 
 export default function App() {
   const produtos = [
-    { id: 1, nome: "Camiseta", preco: "R$ 50,00" },
-    { id: 2, nome: "Calça Jeans", preco: "R$ 120,00" },
-    { id: 3, nome: "Tênis", preco: "R$ 200,00" }
+  { id: 1, nome: "Camiseta", preco: "R$ 50,00", imagem: "https://via.placeholder.com/150" },
+  { id: 2, nome: "Calça Jeans", preco: "R$ 120,00", imagem: "https://via.placeholder.com/150" },
+  { id: 3, nome: "Tênis", preco: "R$ 200,00", imagem: "https://via.placeholder.com/150" }
   ];
 
   const[favoritos, setFavoritos] = useState([]);
@@ -25,7 +25,14 @@ export default function App() {
       <NavBar totalFavoritos={favoritos.length} />
       <main style={{ padding: "1rem" }}>
         {produtos.map( (item) => (
-          <Produto key={item.id} nome={item.nome} preco={item.preco} favoritado={favoritos.includes(item.id)} onFavoritar={() => toggleFavorito(item.id)} />
+          <Produto 
+            key={item.id}
+            nome={item.nome}
+            preco={item.preco}
+            imagem={item.imagem}
+            favoritado={favoritos.includes(item.id)}
+            onFavoritar={() => toggleFavorito(item.id)}
+          />
         ))}
       </main>
   
