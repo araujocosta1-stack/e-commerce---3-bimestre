@@ -1,11 +1,12 @@
-import { Botao } from "./botao.jsx";
 
-export function Produto({ nome, preco }) {
+export function Produto({ nome, preco, favoritado, onFavoritar}) {
   return (
-    <div style={{ border: "1px solid #ccc", padding: "1rem", margin: "1rem 0", borderRadius: "8px" }}>
+    <div style={{ border: "1px solid black", width: "100px", padding: "10px" }}>
       <h2>{nome}</h2>
       <p>{preco}</p>
-      <Botao />
+      <button onClick={onFavoritar}>
+        {favoritado ? "Favoritado" : "Favoritar"}
+      </button>
     </div>
   );
 }

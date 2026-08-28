@@ -1,8 +1,10 @@
-export function NavBar() {
+function NavBar({ totalFavoritos }) {
   return (
-    <nav style={{ background: '#fca003', color: '#fff', padding: '1rem', display: 'flex', justifyContent: 'space-between' }}>
-      <h1> Loja </h1>
-      <span>Carrinho 🛒</span>
+    <nav style={{ padding: "1rem", background: "#222", color: "#fff", display: "flex", justifyContent: "space-between" }}>
+      <h1>Minha Loja</h1>
+      <span>❤️ Favoritos: {totalFavoritos}</span>
     </nav>
   );
 }
+
+export default NavBar;
