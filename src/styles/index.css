@@ -1,46 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fdf6f3;
+  margin: 0;
+}
+
 .app {
   display: flex;
   gap: 40px;
   padding: 40px;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
+  color: #4a3f3a;
 }
 
 .navbar {
-  border: 1px solid black;
+  border: none;
   width: 400px;
   height: 400px;
-  padding: 10px;
+  padding: 24px;
+  background: linear-gradient(160deg, #f7d9dc 0%, #f2c6ce 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(220, 170, 180, 0.35);
+  color: #5c3a3e;
+}
+
+.navbar h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
 }
 
 .grid-produtos {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 170px));
+  gap: 16px;
   margin-top: 10px;
+  justify-content: start;
 }
 
 .mini-card {
-  border: 1px solid black;
+  border: none;
   padding: 20px;
   cursor: pointer;
-  background: white;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mini-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(230, 180, 190, 0.4);
 }
 
 .produto-card {
-  border: 1px solid black;
+  border: none;
   width: 400px;
   height: 400px;
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.produto-card img {
+  border-radius: 12px;
 }
 
 .btn-favorito {
-  border: 1px solid black;
-  padding: 10px;
+  border: none;
+  padding: 12px;
   cursor: pointer;
-  background: white;
+  background: #e88ca0;
+  color: #fff;
+  font-weight: 500;
   align-self: center;
   width: 60%;
+  border-radius: 30px;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.btn-favorito:hover {
+  background: #d9748a;
+  transform: scale(1.03);
 }

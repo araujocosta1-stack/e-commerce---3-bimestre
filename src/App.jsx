@@ -5,11 +5,10 @@ import {Produto} from "./components/Produto.jsx";
 
 export default function App() {
   const produtos = [
-  { id: 1, nome: "Camiseta", preco: "R$ 50,00", imagem: "https://via.placeholder.com/150" },
-  { id: 2, nome: "Calça Jeans", preco: "R$ 120,00", imagem: "https://via.placeholder.com/150" },
-  { id: 3, nome: "Tênis", preco: "R$ 200,00", imagem: "https://via.placeholder.com/150" }
-  ];
-
+  { id: 1, name: "Vestido Floral", url: "https://images.unsplash.com/photo-1715852700550-6436320162e6?w=400&auto=format&fit=crop", de: "R$ 180,00", por: "R$ 140,00" },
+  { id: 2, name: "Vestido Elegante", url: "https://images.unsplash.com/photo-1762395500105-988d1860c152?w=400&auto=format&fit=crop", de: "R$ 220,00", por: "R$ 180,00" },
+  { id: 3, name: "Vestido de Festa", url: "https://images.unsplash.com/photo-1567290290527-b553f4d97960?w=400&auto=format&fit=crop", de: "R$ 250,00", por: "R$ 200,00" },
+  ]
   const[favoritos, setFavoritos] = useState([]);
   function toggleFavorito(id){
     setFavoritos((prev) =>
@@ -21,21 +20,21 @@ export default function App() {
   }
 
   return (
-    <>
-      <NavBar totalFavoritos={favoritos.length} />
-      <main style={{ padding: "1rem" }}>
-        {produtos.map( (item) => (
-          <Produto 
-            key={item.id}
-            nome={item.nome}
-            preco={item.preco}
-            imagem={item.imagem}
-            favoritado={favoritos.includes(item.id)}
-            onFavoritar={() => toggleFavorito(item.id)}
-          />
-        ))}
-      </main>
-  
-    </>
-  );
+  <>
+    <NavBar totalFavoritos={favoritos.length} />
+    <main className="grid-produtos" style={{ padding: "1rem" }}>
+      {produtos.map((item) => (
+        <Produto
+          key={item.id}
+          name={item.name}
+          url={item.url}
+          de={item.de}
+          por={item.por}
+          favoritado={favoritos.includes(item.id)}
+          onFavoritar={() => toggleFavorito(item.id)}
+        />
+      ))}
+    </main>
+  </>
+);
 }
